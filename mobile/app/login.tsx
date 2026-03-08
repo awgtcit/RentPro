@@ -24,8 +24,13 @@ export default function LoginScreen() {
     try {
       await login(username.trim(), password);
       router.replace('/(tabs)/dashboard');
-    } catch {
-      Alert.alert('Login Failed', 'Invalid username or password');
+    } catch (err: any) {
+      const msg = err?.response?.data?.error || err?.message || 'Unknown error';
+      if (err?.response?.status === 401) {
+        Alert.alert('Login Failed', 'Invalid username or password');
+      } else {
+        Alert.alert('Connection Error', `Could not reach server: ${msg}`);
+      }
     } finally {
       setLoading(false);
     }

@@ -12,13 +12,19 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rentpro.mobile"
+      "bundleIdentifier": "com.rentpro.mobile",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#3b82f6"
       },
-      "package": "com.rentpro.mobile"
+      "package": "com.rentpro.mobile",
+      "usesClearTextTraffic": true
     },
     "web": {
       "bundler": "metro",

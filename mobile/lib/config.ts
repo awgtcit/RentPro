@@ -5,13 +5,9 @@ import Constants from 'expo-constants';
 // Configure these values for your environment:
 // - DEV: Use your machine's LAN IP (run `ipconfig` / `ifconfig` to find it)
 // - PROD: Use your server's domain with HTTPS
-const API_CONFIG = {
-  dev: { host: '192.168.0.10', port: 5000, protocol: 'http' as const },
-  prod: { host: '192.168.0.10', port: 5000, protocol: 'https' as const },
-};
-
-const isDev = __DEV__;
-const env = isDev ? API_CONFIG.dev : API_CONFIG.prod;
+// Both dev and prod use HTTP until an SSL certificate is configured
+const API_HOST = '192.168.0.10';
+const API_PORT = 5000;
 
 const getBaseUrl = () => {
   if (Platform.OS === 'web') {
@@ -22,8 +18,8 @@ const getBaseUrl = () => {
   if (Platform.OS === 'android' && isEmulator) {
     return 'http://10.0.2.2:5000/api';
   }
-  // Real device (Android/iOS) — use configured host
-  return `${env.protocol}://${env.host}:${env.port}/api`;
+  // Real device (Android/iOS) — use LAN IP
+  return `http://${API_HOST}:${API_PORT}/api`;
 };
 
 export const API_BASE_URL = getBaseUrl();
