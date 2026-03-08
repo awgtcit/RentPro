@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "RentPro",
+    "slug": "rentpro-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "rentpro",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#3b82f6"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rentpro.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#3b82f6"
+      },
+      "package": "com.rentpro.mobile"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
