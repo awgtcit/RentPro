@@ -1,0 +1,8 @@
+# Exclude non-mobile files from EAS Build uploads
+backend/
+frontend/
+.venv/
+.vscode/
+.github/
+*.bat
+*.db

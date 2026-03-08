@@ -1,0 +1,9 @@
+# Ignore everything except mobile app
+backend/
+frontend/
+.venv/
+.vscode/
+.github/
+start-backend.bat
+start-frontend.bat
+README.md
